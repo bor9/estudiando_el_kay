@@ -1,0 +1,151 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.patches import Polygon
+
+from matplotlib import rc
+from matplotlib import rcParams
+
+__author__ = 'ernesto'
+
+# if use latex or mathtext
+rc('text', usetex=True)
+rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
+
+# colors
+lgray = "#dddddd"  # ligth gray
+
+# range of x and y axis
+xmin_ax = -1
+xmax_ax = 2
+ymin_ax = -0.75
+ymax_ax = 1
+
+# font size
+fontsize = 16
+# arrows head length and head width
+hl = 10
+hw = 6
+hl_ax = 8
+hw_ax = 4
+
+fig = plt.figure(0, figsize=(9, 3), frameon=False)
+# ax = fig.add_subplot(121)
+ax = plt.subplot2grid((1, 8), (0, 0), rowspan=1, colspan=4)
+
+plt.xlim(xmin_ax, xmax_ax)
+plt.ylim(ymin_ax, ymax_ax)
+
+# x axis
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(xmax_ax, 0), textcoords='data',
+             arrowprops=dict(width=0.01, headwidth=hw_ax, headlength=hl_ax, facecolor='black', shrink=0.002))
+# z axis
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(0, ymax_ax), textcoords='data',
+             arrowprops=dict(width=0.01, headwidth=hw_ax, headlength=hl_ax, facecolor='black', shrink=0.002))
+# y axis
+y_e = -0.6
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(xmin_ax, y_e), textcoords='data',
+             arrowprops=dict(width=0.01, headwidth=hw_ax, headlength=hl_ax, facecolor='black', shrink=0.002))
+
+s_x = 0.9
+s_y = 0.75
+# s vector
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(s_x, s_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+# x1 vector
+x1_x = 0.6
+x1_y = 0
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(x1_x, x1_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+
+# pendiente del eje y
+m = y_e / xmin_ax
+
+# x2 vector
+x2_x = -0.35
+x2_y = m * x2_x
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(x2_x, x2_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+
+# labels
+plt.text(x1_x, x1_y+0.1, r'$x[1]$', fontsize=fontsize, ha='center', va='baseline')
+plt.text(x2_x-0.05, x2_y+0.1, r'$x[0]$', fontsize=fontsize, ha='right', va='center')
+plt.text(s_x+0.05, s_y, r'$\theta$', fontsize=fontsize, ha='left', va='bottom')
+plt.axis('off')
+
+#########################
+
+fig = plt.figure(0, figsize=(9, 3), frameon=False)
+ax = plt.subplot2grid((1, 8), (0, 4), rowspan=1, colspan=4)
+
+plt.xlim(xmin_ax, xmax_ax)
+plt.ylim(ymin_ax, ymax_ax)
+
+# x axis
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(xmax_ax, 0), textcoords='data',
+             arrowprops=dict(width=0.01, headwidth=hw_ax, headlength=hl_ax, facecolor='black', shrink=0.002))
+# z axis
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(0, ymax_ax), textcoords='data',
+             arrowprops=dict(width=0.01, headwidth=hw_ax, headlength=hl_ax, facecolor='black', shrink=0.002))
+# y axis
+y_e = -0.6
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(xmin_ax, y_e), textcoords='data',
+             arrowprops=dict(width=0.01, headwidth=hw_ax, headlength=hl_ax, facecolor='black', shrink=0.002))
+
+s_x = 0.9
+s_y = 0.75
+# s vector
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(s_x, s_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+# x1 vector
+x1_x = 0.6
+x1_y = 0
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(x1_x, x1_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+# hat theta
+hs_x = s_x
+hs_y = -0.45
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(hs_x, hs_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+# proyecciones
+x0 = hs_x
+y0 = hs_y
+y1 = 0
+x1 = x0 - y0 / m
+plt.plot([x0, x1], [y0, y1], 'k--', lw=1)
+plt.plot([x0, x0-x1], [y0, y0], 'k--', lw=1)
+plt.plot([hs_x, s_x], [hs_y, s_y], 'k--', lw=1)
+
+
+# x2 vector
+x2_x = -0.35
+x2_y = m * x2_x
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(x2_x, x2_y), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+# proyecciones en los ejes
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(x1, y1), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+plt.annotate("", xytext=(0, 0), xycoords='data', xy=(x0-x1, y0), textcoords='data',
+             arrowprops=dict(width=1, headwidth=hw, headlength=hl, facecolor='black', shrink=0.002))
+
+# labels
+plt.text(x1_x, x1_y+0.1, r'$x[1]$', fontsize=fontsize, ha='center', va='baseline')
+plt.text(x1, y1+0.05, r'$\hat{\theta}_1$', fontsize=fontsize, ha='center', va='baseline')
+plt.text(x2_x-0.05, x2_y+0.1, r'$x[0]$', fontsize=fontsize, ha='right', va='center')
+plt.text(x0-x1-0.1, y0+0.05, r'$\hat{\theta}_0$', fontsize=fontsize, ha='right', va='center')
+plt.text(s_x+0.05, s_y, r'$\theta$', fontsize=fontsize, ha='left', va='bottom')
+plt.text(hs_x+0.08, hs_y-0.1, r'$\hat{\theta}_0+\hat{\theta}_1$', fontsize=fontsize, ha='left', va='center')
+
+plt.axis('off')
+
+# save as pdf image
+plt.savefig('lmmse_geometrical_interpretation_orthogonal_samples.pdf', bbox_inches='tight')
+plt.show()
+
+
