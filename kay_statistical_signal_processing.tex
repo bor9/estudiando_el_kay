@@ -29,7 +29,7 @@
 
 \decimalpoint
 
-% That follow if for listings configuration
+% That follow is for listings configuration
 \usepackage{listings}
 \usepackage{color}
 \usepackage{textcomp}
@@ -738,8 +738,6 @@ El cálculo de \(E(\hat{\theta})\) se puede realizar de forma mas directa consid
 \subsection{Problema 10}
 
 En el problema de estimación de nivel de DC en WGN, se asume ahora que además del parámetro \(A\) también se desconoce el parámetro \(\sigma^2\). Se desea estimar el parámetro vectorial
-%\begingroup
-%\renewcommand*{\arraystretch}{1.5}
 \[
  \bm{\theta}=
  \begin{bmatrix}
@@ -747,10 +745,7 @@ En el problema de estimación de nivel de DC en WGN, se asume ahora que además 
     \sigma^2
  \end{bmatrix}.
 \]
-%\endgroup
 ¿Es el estimador
-%\begingroup
-%\renewcommand*{\arraystretch}{2.8}
 \[
  \bm{\hat{\theta}}=
  \begin{bmatrix}
@@ -762,7 +757,6 @@ En el problema de estimación de nivel de DC en WGN, se asume ahora que además 
     \displaystyle\frac{1}{N-1}\sum_{n=0}^{N-1}\left(x[n]-\hat{A}\right)^2
  \end{bmatrix}
 \]
-%\endgroup
 insesgado?
 
 \paragraph{Solución} Como ya se demostró en el problema de la sección \ref{sec:problema_1_4}, \(E(\hat{A})=A\), es decir, la media muestral \(\hat{A}\) es un estimador insesgado de \(A\). Falta ver si se cumple que \(E(\hat{\sigma^2})=\sigma^2\). Se comienza observando que
@@ -1431,7 +1425,7 @@ De aqui se concluye que la CRLB es
  \var(\hat{A})\geq\frac{2(2N-1)\sigma^2}{N(N+1)}\qquad\qquad\var(\hat{B})\geq\dfrac{12\sigma^2}{N(N^2-1)}.
 \]
 
-Para averiguar si existe un estimador eficiente que alcanze la CRLB, hay que ver si es posible factorizar la función de verosimilitud logarítmica como en la ecuación \ref{eq:crlb_efficiency_condition_vector},
+Para averiguar si existe un estimador eficiente que alcance la CRLB, hay que ver si es posible factorizar la función de verosimilitud logarítmica como en la ecuación \ref{eq:crlb_efficiency_condition_vector},
 \[
  \frac{\partial\ln p(\x;\,\thetabf)}{\partial\thetabf}=\I(\thetabf)(\hat{\thetabf}(\x)-\thetabf),
 \]
@@ -2350,7 +2344,7 @@ y por lo tanto, la CRLB queda
 \begin{equation}\label{eq:crlb_asymptotic_ar1_process}
  \var(\hat{a}[1])\geq\frac{1}{N}(1-a^2[1]).
 \end{equation}
-Esto indica que es mas fácil estimar el parámetro del filtro cuando \(|a[1]|\) es mas cercano a uno que a cero. Como el polo del filtro AR está en \(-a[1]\), significa que parámetros de filtros de procesos con PSD con picos agudos son estimados mas facilmente.
+Esto indica que es mas fácil estimar el parámetro del filtro cuando \(|a[1]|\) es mas cercano a uno que a cero. Como el polo del filtro AR está en \(-a[1]\), significa que parámetros de filtros de procesos con PSD con picos agudos son estimados mas fácilmente.
 
 \section{Problemas}
 
@@ -3284,7 +3278,7 @@ El momento segundo \(E[(\hat{A})^2]\) de la media muestral es
   &=\frac{1}{N^2}\sum_{i=0}^{N-1}\sum_{j=0}^{N-1}E(x[i]x[j])\\
   &\overset{(a)}{=}\frac{1}{N^2}\left[NE(x^2[i])+N(N-1)E(x[i]x[j])\right]
 \end{align*}
-donde en \((a)\) se consideró que en la doble sumatoria hay \(N\) sumandos con \(i=j\) y \(N(N-1)\) sumandos con \(i\neq j\) y además que las varables aleatorias \(x[n]\) son idénticamente distribuidas. Por lo tanto, al tomar el límite se tiene que
+donde en \((a)\) se consideró que en la doble sumatoria hay \(N\) sumandos con \(i=j\) y \(N(N-1)\) sumandos con \(i\neq j\) y además que las variables aleatorias \(x[n]\) son idénticamente distribuidas. Por lo tanto, al tomar el límite se tiene que
 \[
  \lim_{N\to\infty}E^2[(\hat{A})^2]=E^2(x[i]x[j]),\qquad i\neq j.
 \]
@@ -3494,7 +3488,7 @@ En este ejemplo, la CRLB exacta y la asintótica coinciden, pero esto en general
 
 \subsection{Problema 17}
 
-Si en el ejemplo de la estimación de los parámetros de una sinusoide de la sección \ref{sec:sinusoidal_parameter_estimation}, los datos se observan en el intervalo \(n=-M,\,\dots,\,M\), calcular la matriz de información de Fisher. ¿Cuál es la CRLB de los parámetros de la sinusiode? Se pueden aplicar la mismas aproximaciones que en el ejemplo asumiendo que \(M\) es grande. Comparar los resultados con los del ejemplo.
+Si en el ejemplo de la estimación de los parámetros de una sinusoide de la sección \ref{sec:sinusoidal_parameter_estimation}, los datos se observan en el intervalo \(n=-M,\,\dots,\,M\), calcular la matriz de información de Fisher. ¿Cuál es la CRLB de los parámetros de la sinusoide? Se pueden aplicar la mismas aproximaciones que en el ejemplo asumiendo que \(M\) es grande. Comparar los resultados con los del ejemplo.
 
 \paragraph{Solución} Los elementos de la matriz de información de Fisher están dados en la ecuación \ref{eq:sinusidal_parameter_fisher_elements}, pero ahora las sumatorias son de \(n=-M\) a \(n=M\). Se reescriben a continuación considerando esto:
 \begin{equation*}
@@ -4604,7 +4598,7 @@ Usando la identidad \(A\cos\omega+B\sin\omega=\sqrt{A^2+B^2}\cos(\omega-\phi)\),
 \[
  x[n]=\sqrt{a_k^2+b_k^2}\cos(2\pi f_k n-\phi)+w[n].
 \]
-Un estimador MVU se usa para \(a_k\) y \(b_k\), de forma que la potencia estimada de la sinusiode es
+Un estimador MVU se usa para \(a_k\) y \(b_k\), de forma que la potencia estimada de la sinusoide es
 \[
  \hat{P}=\frac{\hat{a}_k^2+\hat{b}_k^2}{2}.
 \]
@@ -4699,7 +4693,7 @@ Esta aproximación se obtiene agregando sumandos a la ecuación \ref{eq:sample_a
 \]
 ya que \(u[n]\neq0\) desde \(n=0\) a \(n=N-1\) y \(u[n+|i-j|]\neq0\) desde \(n=-|i-j|\) a \(n=N-1-|i-j|\).
 
-Para verificar que la aproximación es válida, primero se observa que las ecuaciones \ref{eq:sample_autocorrelation_tmp} y \ref{eq:sample_autocorrelation_1} coinciden si \(i=1\) o \(j=1\). Efectivamente, supógase que \(j=1\). En ese caso, el límite superior de la sumatoria de la ecuación \ref{eq:sample_autocorrelation_tmp} es \(N-\max(i,\,j)=N-i\) y el límite superior de la sumatoria de la ecuación \ref{eq:sample_autocorrelation_1} es \(N-1-|i-j|=N-1-(i-1)=N-i\), concluyendo que ambas ecuaciones coinciden. También se observa que si \(i\neq1\) y \(j\neq1\),
+Para verificar que la aproximación es válida, primero se observa que las ecuaciones \ref{eq:sample_autocorrelation_tmp} y \ref{eq:sample_autocorrelation_1} coinciden si \(i=1\) o \(j=1\). Efectivamente, supóngase que \(j=1\). En ese caso, el límite superior de la sumatoria de la ecuación \ref{eq:sample_autocorrelation_tmp} es \(N-\max(i,\,j)=N-i\) y el límite superior de la sumatoria de la ecuación \ref{eq:sample_autocorrelation_1} es \(N-1-|i-j|=N-1-(i-1)=N-i\), concluyendo que ambas ecuaciones coinciden. También se observa que si \(i\neq1\) y \(j\neq1\),
 \[
  \sum_{n=0}^{N-1-|i-j|}u[n]u[n+|i-j|]=\sum_{n=0}^{N-\max(i,\,j)}u[n]u[n+|i-j|]+\sum_{n=N-\max(i,\,j)+1}^{N-1-|i-j|}u[n]u[n+|i-j|].
 \]
@@ -5037,7 +5031,7 @@ La matriz de covarianza del estimador está dada por la ecuación \ref{eq:linear
 
 \subsection{Problema 13}
 
-En la práctica a veces se encuentra el ``modelo lineal'' \(\x=\Hbf\thetabf+\w\) pero con la matriz \(\Hbf\) compuesta de variables aleatorias. Supongase que se ignora esta diferencia y se emplea el estimador usual
+En la práctica a veces se encuentra el ``modelo lineal'' \(\x=\Hbf\thetabf+\w\) pero con la matriz \(\Hbf\) compuesta de variables aleatorias. Supóngase que se ignora esta diferencia y se emplea el estimador usual
 \[
  \hat{\thetabf}=(\Hbf^T\Hbf)^{-1}\Hbf^T\x,
 \]
@@ -5138,7 +5132,7 @@ Si la PDF \(p(\x;\,\theta)\) de los datos puede ser factorizada como
 \begin{equation}\label{eq:general_mvu_neyman_fisher_factorization}
   p(\x;\,\theta)=g(T(\x),\,\theta)h(\x),
 \end{equation}
-donde \(g\) es una función que depende de \(\x\) solo a través de \(T(\x)\) y \(h\) es una función que depende solo de los datos \(\x\), se cumple que \(T(\x)\) es un estadístico suficiente de \(\theta\). Recíprocamente, si \(T(\x)\) es un estadísitico suficiente de \(\theta\), la PDF de los datos puede ser factorizada como en la ecuación \ref{eq:general_mvu_neyman_fisher_factorization}.
+donde \(g\) es una función que depende de \(\x\) solo a través de \(T(\x)\) y \(h\) es una función que depende solo de los datos \(\x\), se cumple que \(T(\x)\) es un estadístico suficiente de \(\theta\). Recíprocamente, si \(T(\x)\) es un estadístico suficiente de \(\theta\), la PDF de los datos puede ser factorizada como en la ecuación \ref{eq:general_mvu_neyman_fisher_factorization}.
 
 \paragraph{Demostración} Para la demostración, se realizarán primero dos observaciones:
 \begin{itemize}
@@ -5159,7 +5153,7 @@ por lo que la PDF es \(p(x)=\delta(x-c)\). Otra analogía mas cercana a la situa
  \begin{equation}\label{eq:general_mvu_rv_transformation}
   p(y)=\int p(\x)\delta(y-g(\x))\,d\x.
  \end{equation}
- Se mostrará para el caso escalar que esto es equivalente a la ecuación usual de la PDF de una variable aleatoria transformada. Si \(x\) es una variable aletoria escalar, la PDF de la variable transformada \(y=g(x)\) es (ver el capítulo 5 de \cite{papoulis2002probability})
+ Se mostrará para el caso escalar que esto es equivalente a la ecuación usual de la PDF de una variable aleatoria transformada. Si \(x\) es una variable aleatoria escalar, la PDF de la variable transformada \(y=g(x)\) es (ver el capítulo 5 de \cite{papoulis2002probability})
  \begin{equation}\label{eq:pdf_transformed_rv}
   p_y(y)=\sum_{i=1}^k\frac{p_x(x_i)}{|g'(x_i)|},
  \end{equation}
@@ -5268,7 +5262,7 @@ que es lo que se quería demostrar. Además, en principio, la PDF del estadísti
 
 \subsection{Ejemplo: nivel de DC en WGN}\label{sec:general_mvu_dc_in_wgn_sufficient}
 
-Se buscará un estadísitico suficiente para el problema de la estimación del nivel de DC en WGN. Como se vió previamente, la PDF de los datos es (ecuación \ref{eq:dc_in_wgn_pdf})
+Se buscará un estadístico suficiente para el problema de la estimación del nivel de DC en WGN. Como se vió previamente, la PDF de los datos es (ecuación \ref{eq:dc_in_wgn_pdf})
 \[
  p(\x;\,A)=\frac{1}{(2\pi\sigma^2)^\frac{N}{2}}\exp\left[-\frac{1}{2\sigma^2}\sum_{n=0}^{N-1}(x[n]-A)^2\right].
 \]
@@ -5603,7 +5597,7 @@ Como la esperanza del estadístico es proporcional al valor del parámetro, para
 \[
  \hat{\theta}=\frac{N+1}{2N}T=\frac{N+1}{2N}\max x[n].
 \]
-So observa que, de forma contraintuitiva, la media muestral no es el estimador MVU de la media para ruido con distribución uniforme. Es de interés comparar la varianza mínima con la de la media muestral. La varianza mínima es
+Se observa que, de forma contraintuitiva, la media muestral no es el estimador MVU de la media para ruido con distribución uniforme. Es de interés comparar la varianza mínima con la de la media muestral. La varianza mínima es
 \[
  \var(\hat{\theta})=\left(\frac{N+1}{2N}\right)^2\var(T),
 \]
@@ -6203,7 +6197,7 @@ con
  E(\hat{\theta})=E(\bar{x}^3)-3E(\bar{x})\frac{\sigma^2}{N}
   =\left(A^3+3A\frac{\sigma^2}{N}\right)-3A\frac{\sigma^2}{N}=A^3,
 \]
-concluyendo que la función \(h\) propuesta hace al estadísitico suficiente \(\bar{x}\) insesgado y por lo tanto, \(\hat{\theta}\) es el estimador MVU.
+concluyendo que la función \(h\) propuesta hace al estadístico suficiente \(\bar{x}\) insesgado y por lo tanto, \(\hat{\theta}\) es el estimador MVU.
 
 
 \subsection{Problema 12}
@@ -6262,7 +6256,7 @@ que se puede factorizar como
 \[
  p(\x;\,\theta)=\underbrace{u(\min x[n]-\theta)\exp\left(N\theta\right)\vphantom{\sum_{n=0}^{N-1}x[n]}}_{\displaystyle g(T(\x),\,\theta)}\underbrace{\exp\left(-\sum_{n=0}^{N-1}x[n]\right)}_{\displaystyle h(\x)},
 \]
-concluyendo que un estádistico suficiente de \(\theta\) es
+concluyendo que un estadístico suficiente de \(\theta\) es
 \[
  T(\x)=\min x[n].
 \]
@@ -6991,7 +6985,7 @@ donde
 \[
  p(\x,\,\thetabf)=\frac{1}{(2\pi\sigma^2)^\frac{N}{2}}\exp\left[-\frac{1}{2\sigma^2}(\x-\Hbf\thetabf)^T(\x-\Hbf\thetabf)\right].
 \]
-Para factoriazar la PDF como indica el teorema de Neyman-Fisher (ecuación  \ref{eq:general_mvu_neyman_fisher_factorization_vector}) se demostrará que 
+Para factorizar la PDF como indica el teorema de Neyman-Fisher (ecuación  \ref{eq:general_mvu_neyman_fisher_factorization_vector}) se demostrará que 
 \[
  (\x-\Hbf\thetabf)^T(\x-\Hbf\thetabf)=(\x-\Hbf\hat{\thetabf})^T(\x-\Hbf\hat{\thetabf})+(\thetabf-\hat{\thetabf})^T\Hbf^T\Hbf(\thetabf-\hat{\thetabf}),
 \]
@@ -7542,7 +7536,7 @@ En el caso gaussiano, la media muestral es el estimador MVU, y por lo tanto, el 
 \[
  p(\x;\,\mu)=\frac{1}{2^N}\exp\left(-\sum_{n=0}^{N-1}|x[n]-\mu|\right).
 \]
-Para encontrar un estadístico suficiente, la PDF debe factorizarse como la ecuación \ref{eq:general_mvu_neyman_fisher_factorization} del teorema de Neyman-Fisher. Esto no parece ser posible, ya que el valor absoluto impide separar los datos del parámetro en una función \(g(T(\x),\,\mu)\). Para calcular la CRLB, tomando el logarítmo, se tiene que
+Para encontrar un estadístico suficiente, la PDF debe factorizarse como la ecuación \ref{eq:general_mvu_neyman_fisher_factorization} del teorema de Neyman-Fisher. Esto no parece ser posible, ya que el valor absoluto impide separar los datos del parámetro en una función \(g(T(\x),\,\mu)\). Para calcular la CRLB, tomando el logaritmo, se tiene que
 \[
  \ln p(\x;\,\mu)=-N\ln2-\sum_{n=0}^{N-1}|x[n]-\mu|
 \]
@@ -8705,7 +8699,7 @@ y en general los dos valores son distintos (ver por ejemplo el problema de la se
 
 \subsection{Introducción}\label{sec:mle_em_introduction}
 
-Un método para determinar de forma numérica el estimador MLE es el algortimo esperanza-maximización (\emph{expectation-maximization}, EM). Es un algoritmo iterativo en el que en cada paso se obtiene una estimación del parámetro que incrementa la función de verosimilitud. Bajo  ciertas condiciones no muy exigentes, el algoritmo converge al menos a un máximo local. En esta sección se describe brevemente el algoritmo. Para hacerlo, se comienza considerando el ejemplo de estimación de las frecuencias de una mezcla de sinusoides, donde el modelo de los datos es
+Un método para determinar de forma numérica el estimador MLE es el algoritmo esperanza-maximización (\emph{expectation-maximization}, EM). Es un algoritmo iterativo en el que en cada paso se obtiene una estimación del parámetro que incrementa la función de verosimilitud. Bajo  ciertas condiciones no muy exigentes, el algoritmo converge al menos a un máximo local. En esta sección se describe brevemente el algoritmo. Para hacerlo, se comienza considerando el ejemplo de estimación de las frecuencias de una mezcla de sinusoides, donde el modelo de los datos es
 \[
  x[n]=\sum_{p=1}^{p}\cos2\pi f_in+w[n],\qquad n=0,\,\dots,\,N-1,
 \]
@@ -8928,7 +8922,7 @@ Descartando el término independiente de \(\thetabf\) en la ecuación \ref{eq:ml
 \[
  U'(\thetabf,\,\thetabf_k)=\mathbf{c}^T\y=\sum_{i=1}^{p}\mathbf{c_i}^T\hat{\y}_i,
 \]
-lo cual se hace maximizando coda termino de la suma separadamente,
+lo cual se hace maximizando cada termino de la suma separadamente,
 \[
  f_{i_{k+1}}=\argmax_{f_i}\mathbf{c}_i\hat{\y}_i.
 \]
@@ -9040,7 +9034,7 @@ los coeficientes se obtienen como
 \[
  b[1]=-(z_1+z_2),\qquad\qquad b[2]=z_1z_2.
 \]
-Para la minimización puede emplearse la busqueda sobre una grilla en el plano complejo o algún método iterarivo. La restricción de que \(z_1\) y \(z_2\) son reales o complejos conjugados limita la búsqueda, y es necesaria para que los coeficientes del filtro generador, y por lo tanto el proceso \(x[n]\), sean reales.
+Para la minimización puede emplearse la búsqueda sobre una grilla en el plano complejo o algún método iterarivo. La restricción de que \(z_1\) y \(z_2\) son reales o complejos conjugados limita la búsqueda, y es necesaria para que los coeficientes del filtro generador, y por lo tanto el proceso \(x[n]\), sean reales.
 
 Se realizó una simulación por computadora del cálculo del MLE asintótico de los parámetros \(b[1]\) y \(b[2]\) de un proceso MA(2), cuya ACF está dada por la ecuación \ref{eq:mle_asymptotic_ma2_autocorrelation}, mediante la búsqueda del mínimo de la ecuación \ref{eq:mle_asymptotic_ma2_log_likelihood}. Para esto se generaron \(N=150\) muestras del proceso MA(2) con parámetros \(b[1]=-0.9\) y \(b[2]=0.81\), que corresponde a un filtro generador \(\mathcal{B}(z)\) con ceros en \(z_{1,\,2}=0.9e^{\pm j\pi/6}\), se construyó una grilla en el semicírculo unidad del plano complejo y se evaluó la ecuación \ref{eq:mle_asymptotic_ma2_log_likelihood} en cada punto de la grilla. El estimador MLE de \(z_1\) es el valor de la grilla en donde la función toma el menor valor, y \(z_2=z_1^*\). El resultado se muestra en la figura \ref{fig:example_7_14}.
 \begin{figure}[!htb]
@@ -9053,7 +9047,7 @@ Para la realización mostrada en la figura, el mínimo de la superficie está en
 \[
  \hat{b}[1]=-2|\hat{z}_1|\cos[\arg(\hat{z}_1)]\approx-0.92\qquad\qquad\textrm{y}\qquad\qquad\hat{b}[2]=|\hat{z}_1|^2\approx 0.79.
 \]
-El resultado mejora al incrementar la cantidad \(N\) de muestras del proceso. La ecuación \ref{eq:mle_asymptotic_ma2_log_likelihood} debe evaluarse para cada punto de la grilla y por lo tanto, puede ser computacionalmente costoso. Para hacerlo de forma eficiente, notar que \(I(f)\) solo depende de los datos \(x[n]\) y no de los valores \(z_1\) de la grilla, por lo que se calcula una sola vez mediante la transformada discreta de Fourier (\emph{discrete Fourier transform}, DFT) con relleno de ceros para obtener una cantidad de muestras apropiada en la frecuencia y lograr un cálculo preciso de la integral de forma númerica, empleando por ejemplo, la regla del trapecio. El denominador en la integral es distinto para cada complejo \(z_1\) en la grilla, y para calcularlo de forma eficiente, se aplica la DTF a la secuencia \([1,\, -2|z_1|\cos[\arg(z_1)],\,|z_1|^2]\) con el relleno de ceros apropiado para tener la misma cantidad de muestras en frecuencia que el numerador. Se tuvo en cuenta además que el integrando es simétrico, por lo que alcanza con integrar en el intervalo entre 0 y \(1/2\).
+El resultado mejora al incrementar la cantidad \(N\) de muestras del proceso. La ecuación \ref{eq:mle_asymptotic_ma2_log_likelihood} debe evaluarse para cada punto de la grilla y por lo tanto, puede ser computacionalmente costoso. Para hacerlo de forma eficiente, notar que \(I(f)\) solo depende de los datos \(x[n]\) y no de los valores \(z_1\) de la grilla, por lo que se calcula una sola vez mediante la transformada discreta de Fourier (\emph{discrete Fourier transform}, DFT) con relleno de ceros para obtener una cantidad de muestras apropiada en la frecuencia y lograr un cálculo preciso de la integral de forma numérica, empleando por ejemplo, la regla del trapecio. El denominador en la integral es distinto para cada complejo \(z_1\) en la grilla, y para calcularlo de forma eficiente, se aplica la DTF a la secuencia \([1,\, -2|z_1|\cos[\arg(z_1)],\,|z_1|^2]\) con el relleno de ceros apropiado para tener la misma cantidad de muestras en frecuencia que el numerador. Se tuvo en cuenta además que el integrando es simétrico, por lo que alcanza con integrar en el intervalo entre 0 y \(1/2\).
 
 \section{Ejemplos de procesamiento de señales}
 
@@ -10938,7 +10932,7 @@ El algoritmo no requiere la inversión de matrices. La recursión comienza calcu
 \begin{figure}[!htb]
 \begin{center}
 \lstinputlisting{figuras/ls_order_recursive.py}
-\caption{\label{fig:ls_order_recursive_python} Implementación en el leguaje Python del algoritmo LS de orden recursivo para el ejemplo del modelo de datos polinómico en \(n\). En la iteración \(k\)-ésima se calcula el estimador y el error LS mínimo en función de las estimaciones en el paso \(k-1\). Para que la implementación sea genérica, basta cambiar la específicación de la matriz \(\Hbf_1\) en el paso inicial y la columna \(\h_k\) a agregar a la matriz \(\Hbf_{k-1}\) en el paso \(k\)-ésimo.}
+\caption{\label{fig:ls_order_recursive_python} Implementación en el leguaje Python del algoritmo LS de orden recursivo para el ejemplo del modelo de datos polinómico en \(n\). En la iteración \(k\)-ésima se calcula el estimador y el error LS mínimo en función de las estimaciones en el paso \(k-1\). Para que la implementación sea genérica, basta cambiar la especificación de la matriz \(\Hbf_1\) en el paso inicial y la columna \(\h_k\) a agregar a la matriz \(\Hbf_{k-1}\) en el paso \(k\)-ésimo.}
 \end{center}
 \end{figure}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
@@ -11175,7 +11169,7 @@ resultando en
 \[
  \hat{A}[N]=\hat{A}[N-1]-\frac{\dfrac{1}{\sigma_N^2}}{\displaystyle\sum_{n=0}^{N}\frac{1}{\sigma_n^2}}(x[N]-\hat{A}[N-1])
 \]
-El nuevo estimador es igual al estimador previo mas un \emph{término de corrección}. El factor de ganancia que multiplica al término de corrección depende de la confianza en la nueva muestra. Si la nueva muestra es ruidosa o \(\sigma^2_N\to\infty\), el estimador previo no se corrige. En caso contrario, si la nueva muestr no tiene ruido o \(\sigma^2_N\to0\), \(\hat{A}[N]\to x[N]\), lo que significa que las muestras previas se descartan. Por lo tanto, el factor de ganancia representa la confianza en la nueva muestra relativa a la confianza de las muestras previas. 
+El nuevo estimador es igual al estimador previo mas un \emph{término de corrección}. El factor de ganancia que multiplica al término de corrección depende de la confianza en la nueva muestra. Si la nueva muestra es ruidosa o \(\sigma^2_N\to\infty\), el estimador previo no se corrige. En caso contrario, si la nueva muestra no tiene ruido o \(\sigma^2_N\to0\), \(\hat{A}[N]\to x[N]\), lo que significa que las muestras previas se descartan. Por lo tanto, el factor de ganancia representa la confianza en la nueva muestra relativa a la confianza de las muestras previas. 
 Continuando con la interpretación del resultado, se sabe por el problema de la sección \ref{sec:problem_8_8} que                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 \[
  \var(\hat{A}[N-1])=\frac{1}{\displaystyle\sum_{n=0}^{N-1}\frac{1}{\sigma_n^2}}.
@@ -12983,7 +12977,7 @@ resultando en
 \[
  J_{\min_2}=J_{\min_1}-\frac{M}{N}(N-M)(\bar{x}_1-\bar{x})^2.
 \]
-Un salto en el nivel en \(n=M\) se maniefiesta en un decrecimiento grande del error \(J_{\min_2}\) del modelo de segundo orden. Efectivamente, si no hay un cambio de nivel \(\bar{x}_1\approx\bar{x}\) y por lo tanto \(J_{\min_2}\approx J_{\min_1}\), mientras si hay un cambio de nivel, \((\bar{x}_1-\bar{x})^2\) tendrá un valor significativo.
+Un salto en el nivel en \(n=M\) se manifiesta en un decrecimiento grande del error \(J_{\min_2}\) del modelo de segundo orden. Efectivamente, si no hay un cambio de nivel \(\bar{x}_1\approx\bar{x}\) y por lo tanto \(J_{\min_2}\approx J_{\min_1}\), mientras si hay un cambio de nivel, \((\bar{x}_1-\bar{x})^2\) tendrá un valor significativo.
 
 \subsection{Problema 17}
 
@@ -13234,7 +13228,7 @@ donde
  \end{bmatrix}\\
  \C[-1]&=\operatorname{diag}\left(\sigma^2_{-p},\,\sigma^2_{-(p-1)},\,\dots,\,\sigma^2_{-1}\right).
 \end{align*}
-De esta forma, se puede ver al estimador inicial del LSE secuencial como el resultado de aplicar un estimador por lotes con los vecotres de observación iniciales. Debido a que el LSE secuencial inicializado mediante el estimador por lotes es idéntico al estimador por lotes empleando todos los vectores de observación, se cumple que el LSE secuencial con las condiciones iniciales asumidas es
+De esta forma, se puede ver al estimador inicial del LSE secuencial como el resultado de aplicar un estimador por lotes con los vectores de observación iniciales. Debido a que el LSE secuencial inicializado mediante el estimador por lotes es idéntico al estimador por lotes empleando todos los vectores de observación, se cumple que el LSE secuencial con las condiciones iniciales asumidas es
 \begin{equation}\label{eq:ls_sequential_estimator_tmp}
  \hat{\thetabf}_S[n]=\left(\sum_{k=-p}^{n}\frac{1}{\sigma_k^2}\h[h]\h^T[k]\right)^{-1}\left(\sum_{k=-p}^{n}\frac{1}{\sigma_k^2}x[h]\h[k]\right).
 \end{equation}
@@ -14336,7 +14330,7 @@ un estimador por el método de los momentos es
 \[
  \hat{\sigma}=\sqrt{\frac{1}{N}\sum_{n=0}^{N-1}x^2[n]}.
 \]
-En el ejemplo de la estimación de los parámetros de ruido de Laplace de la sección \ref{sec:crlb_scalar} se encontró que el estimadro MVU eficiente de \(\sigma\) es
+En el ejemplo de la estimación de los parámetros de ruido de Laplace de la sección \ref{sec:crlb_scalar} se encontró que el estimador MVU eficiente de \(\sigma\) es
 \[
  \hat{\sigma}=\frac{\sqrt{2}}{N}\sum_{n=0}^{N-1}|x[n]|.
 \]
@@ -15099,7 +15093,7 @@ La PDF condicional \(p(y|x)\) también es gaussiana con
  E(y|x)&=E(y)+\frac{\cov(x,\,y)}{\var(x)}(x-E(x))\label{eq:conditional_joint_bivariate_gaussian_mean}\\
  \var(y|x)&=\var(y)-\frac{\cov^2(x,\,y)}{\var(x)}\label{eq:conditional_joint_bivariate_gaussian_variance}.
 \end{align}
-Este resultado puede interpretarse de la siguiente forma. Antes de observar \(x\), la variable aletoria \(y\) está distribuida de acuerdo a la PDF a priori \(p(y)\), o \(y\sim\mathcal{N}(E(y),\,\var(y))\). Luego de observar \(x\), la variable aleatoria \(y\) está distribuida de acuerdo a la PDF a posteriori \(p(y|x)\) dada por el teorema. Asumiendo que \(x\) e \(y\) no son independientes y por lo tanto, \(\cov(x,\,y)\neq0\), la PDF a posterior se hace mas concentrada dado que hay menos incertidumbre sobre \(y\). Para verificar esto, de la ecuación \ref{eq:conditional_joint_bivariate_gaussian_variance} se ve que 
+Este resultado puede interpretarse de la siguiente forma. Antes de observar \(x\), la variable aleatoria \(y\) está distribuida de acuerdo a la PDF a priori \(p(y)\), o \(y\sim\mathcal{N}(E(y),\,\var(y))\). Luego de observar \(x\), la variable aleatoria \(y\) está distribuida de acuerdo a la PDF a posteriori \(p(y|x)\) dada por el teorema. Asumiendo que \(x\) e \(y\) no son independientes y por lo tanto, \(\cov(x,\,y)\neq0\), la PDF a posterior se hace mas concentrada dado que hay menos incertidumbre sobre \(y\). Para verificar esto, de la ecuación \ref{eq:conditional_joint_bivariate_gaussian_variance} se ve que 
 \begin{align}\label{eq:conditional_joint_bivariate_gaussian_variance_rho}
  \var(y|x)&=\var(y)\left[1-\frac{\cov^2(x,\,y)}{\var(x)\var(y)}\right]\nonumber\\
   &=\var(y)(1-\rho^2)
@@ -17366,7 +17360,7 @@ Sea una parámetro \(\thetabf\) que cambia con el tiempo de acuerdo a la relaci�
 \[
  \thetabf[n]=\A\thetabf[n-1],\qquad n\leq1,
 \]
-donde \(\A\) es una matriz \(p\times p\) invertible conocida y \(\thetabf[0]\) es un parámetro desconocido que se modela como un vector aleatrio. Notar que una vez que \(\thetabf[0]\) es especificado, también lo es \(\thetabf[n]\) para \(n\geq1\). Probar que el estimador MMSE de \(\thetabf[n]\) es
+donde \(\A\) es una matriz \(p\times p\) invertible conocida y \(\thetabf[0]\) es un parámetro desconocido que se modela como un vector aleatorio. Notar que una vez que \(\thetabf[0]\) es especificado, también lo es \(\thetabf[n]\) para \(n\geq1\). Probar que el estimador MMSE de \(\thetabf[n]\) es
 \[
  \hat{\thetabf}[n]=\A^n\hat{\thetabf}[0]
 \]
@@ -17846,7 +17840,7 @@ como se muestra en la figura \ref{fig:problem_11_15}. En el caso en que \(\sigma
 \[
  \lim_{\sigma_1^2\to0}a^2=0\qquad\qquad\textrm{y}\qquad\qquad\lim_{\sigma_2^2\to\infty}b^2=2\sigma^2\ln\dfrac{1}{1-P},
 \]
-la superficie de error es una elipse con semi-ejes de largo \(a\) y \(b\) con \(b\gg a\), indicando que la incertidumbre se encuentra fundamentalemente en el eje vertical \(\epsilon_2\), como se muestra en la figura \ref{fig:problem_11_15}.
+la superficie de error es una elipse con semi-ejes de largo \(a\) y \(b\) con \(b\gg a\), indicando que la incertidumbre se encuentra fundamentalmente en el eje vertical \(\epsilon_2\), como se muestra en la figura \ref{fig:problem_11_15}.
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics[width=\textwidth]{figuras/problem_11_15.pdf}
@@ -18813,7 +18807,7 @@ donde en \((a)\) se empleó la ecuación \ref{eq:linear_bayesian_sequential_dc_e
 
 \subsection{Estimador LMMSE secuencial para el modelo lineal bayesiano}\label{sec:linear_bayesian_sequential_lmmse_estimation_linear_model}
 
-Como generalización de los resultados, en esta sección se deduce el estimador LMMSE secuencial para el modelo lineal bayesiano. El estimador LMMSE para el modelo lineal bayesiano está dado por el teorema de Gauss-Markov bayesiano (sección \ref{sec:linear_bayesian_sequential_lmmse_estimation}). Para deducir el estimador secuencial, se asume que los datos tienen el modelo lineal bayesiano y además que \(\C_w\) es una matriz diagonal, es decir, las muestras de ruido \(w[n]\) no están correlacionadas y tienen varianza \(E(w[n])=\sigma^2_n\). Está hipótesis es crítica para la deducción del estimdor secuencial y también fue asumida en el ejemplo anterior. De forma fortuita, el conjunto de ecuaciones obtenido sirve también para el caso en que las medias no son nulas. Por lo tanto, las ecuaciones son la implementación secuencial del estimador LMSSE vectorial de las  ecuaciones \ref{eq:linear_bayesian_bayesian_linear_model_estimator1} o \ref{eq:linear_bayesian_bayesian_linear_model_estimator2} cuando la matriz de covarianza \(\C_w\) del ruido es diagonal. Para definir las ecuaciones, sea \(\hat{\thetabf}[n]\) el estimador LMMSE basado en las muestras \(\{x[0],\,\dots,\,x[n]\}\) y \(\M[n]\) la matriz de MSE mínimo correspondiente, que la es versión secuencial de las ecuaciones \ref{eq:linear_bayesian_bayesian_linear_model_covariance1} o  \ref{eq:linear_bayesian_bayesian_linear_model_covariance2}, o
+Como generalización de los resultados, en esta sección se deduce el estimador LMMSE secuencial para el modelo lineal bayesiano. El estimador LMMSE para el modelo lineal bayesiano está dado por el teorema de Gauss-Markov bayesiano (sección \ref{sec:linear_bayesian_sequential_lmmse_estimation}). Para deducir el estimador secuencial, se asume que los datos tienen el modelo lineal bayesiano y además que \(\C_w\) es una matriz diagonal, es decir, las muestras de ruido \(w[n]\) no están correlacionadas y tienen varianza \(E(w[n])=\sigma^2_n\). Está hipótesis es crítica para la deducción del estimador secuencial y también fue asumida en el ejemplo anterior. De forma fortuita, el conjunto de ecuaciones obtenido sirve también para el caso en que las medias no son nulas. Por lo tanto, las ecuaciones son la implementación secuencial del estimador LMSSE vectorial de las  ecuaciones \ref{eq:linear_bayesian_bayesian_linear_model_estimator1} o \ref{eq:linear_bayesian_bayesian_linear_model_estimator2} cuando la matriz de covarianza \(\C_w\) del ruido es diagonal. Para definir las ecuaciones, sea \(\hat{\thetabf}[n]\) el estimador LMMSE basado en las muestras \(\{x[0],\,\dots,\,x[n]\}\) y \(\M[n]\) la matriz de MSE mínimo correspondiente, que la es versión secuencial de las ecuaciones \ref{eq:linear_bayesian_bayesian_linear_model_covariance1} o  \ref{eq:linear_bayesian_bayesian_linear_model_covariance2}, o
 \[
  \M[n]=E\left[(\thetabf-\hat{\thetabf}[n])(\thetabf-\hat{\thetabf}[n])^T\right].
 \]
@@ -19017,7 +19011,7 @@ donde \(\M[-1]=\sigma^2_\theta\). Luego de calcular el vector ganancia , puede c
 \[
  \M[0]=(\I-\K[0]\h^T[0])\M[-1],
 \]
-y el procedimieto continúa de forma similar para \(n\geq1\).
+y el procedimiento continúa de forma similar para \(n\geq1\).
 Se realizó una simulación en computadora del cálculo del estimador LMSSE secuencial para el análisis de Fourier bayesiano. El valor verdadero del parámetro a estimar es
 \[
  \thetabf=
@@ -19104,7 +19098,7 @@ es referida como \emph{matriz de suavizado de Wiener}. De la ecuación \ref{eq:l
  \M_{\hat{\s}}&=\R_{ss}-\R_{ss}(\R_{ss}+\R_{ww})^{-1}\R_{ss}\\
   &=(\I-\W)\R_{ss}.
 \end{align*}
-Como ejemplo, si \(N=1\), se quiere estimar \(s[0]\) en base a \(x[0]=s[0]+w[0]\). En este caso, la matriz \(\W\) de suvizado de Wiener es un escalar \(W\) dado por
+Como ejemplo, si \(N=1\), se quiere estimar \(s[0]\) en base a \(x[0]=s[0]+w[0]\). En este caso, la matriz \(\W\) de suavizado de Wiener es un escalar \(W\) dado por
 \begin{equation}\label{eq:linear_bayesian_bayesian_wiener_smoothing_scalar}
  W=\frac{r_{ss}[0]}{r_{ss}[0]+r_{ww}[0]}=\frac{\eta}{\eta+1}
 \end{equation}
@@ -19223,7 +19217,7 @@ por lo que el sistema de ecuaciones a resolver para obtener la respuesta al impu
 \[
  \sum_{k=0}^\infty h[k]r_{xx}[l-k]=r_{ss}[l],\qquad l=0,\,1,\,\dots.
 \]
-Es razonable el hecho de que las soluciones sean idénticas, ya que el problema de estimar \(s[n]\) en base a \(x[m]\) para \(0\leq m\leq n\) con \(n\to\infty\) es lo mismo que emplear la muestra actual y las infinitas muestras pasadas. La solución de la ecuación \ref{eq:linear_bayesian_bayesian_wiener_infinite_filter_estimator} emplea la factorización espectral y se explora en el problema de la sección \ref{sec:problem_12_16}. A primera vista, podría pensarse que la ecuación \ref{eq:linear_bayesian_bayesian_wiener_infinite_filter_estimator} podría resolverse mediante la tranformada de Fourier, ya que el lado izquierdo de la igualdad es una convolución. Sin embargo no es así debido a que las ecuaciones son válidas únicamente para \(l\geq0\). Si las ecuaciones fueran válidas además para \(l<0\), la transformada de Fourier sería una estrategia viable. Ese conjunto de ecuaciones surge en el problema de suavizado, en el cual \(s[n]\) es estimado en base a \(\{\dots,\,x[-1],\,x[0],\,x[1],\,\dots\}\) o a \(x[k]\) para todo \(k\). En este caso, el estimador de suavizado tiene la forma
+Es razonable el hecho de que las soluciones sean idénticas, ya que el problema de estimar \(s[n]\) en base a \(x[m]\) para \(0\leq m\leq n\) con \(n\to\infty\) es lo mismo que emplear la muestra actual y las infinitas muestras pasadas. La solución de la ecuación \ref{eq:linear_bayesian_bayesian_wiener_infinite_filter_estimator} emplea la factorización espectral y se explora en el problema de la sección \ref{sec:problem_12_16}. A primera vista, podría pensarse que la ecuación \ref{eq:linear_bayesian_bayesian_wiener_infinite_filter_estimator} podría resolverse mediante la transformada de Fourier, ya que el lado izquierdo de la igualdad es una convolución. Sin embargo no es así debido a que las ecuaciones son válidas únicamente para \(l\geq0\). Si las ecuaciones fueran válidas además para \(l<0\), la transformada de Fourier sería una estrategia viable. Ese conjunto de ecuaciones surge en el problema de suavizado, en el cual \(s[n]\) es estimado en base a \(\{\dots,\,x[-1],\,x[0],\,x[1],\,\dots\}\) o a \(x[k]\) para todo \(k\). En este caso, el estimador de suavizado tiene la forma
 \[
  \hat{s}[n]=\sum_{k=-\infty}^\infty a_kx[k],
 \]
@@ -19964,7 +19958,7 @@ donde \(\theta_i\) es el ángulo formado entre \(x_3\) y \(e_i\) y en la segunda
        Interpretación geométrica del procedimiento de Gram-Schmidt.}\label{fig:problem_12_10}
   \end{minipage}
 \end{figure}
-Por lo tanto, el número \((x_3,\,e_i)\) es el largo de la proyección de \(x_3\) sobre \(e_i\), y el vector \((x_3,\,e_i)e_i\) es el vector de largo la proyección de \(x_3\) sobre \(e_i\) con la dirección de \(e_i\). En resmen, los vectores \((x_3,\,e_1)e_1\) y \((x_3,\,e_1)e_1\) son los vectores formados por la proyección de \(x_3\) sobre \(e_1\) y \(e_2\) respectivamente, como se muestra en la figura. De esta forma, \((x_3,\,e_1)e_1+(x_3,\,e_1)e_1\) es la proyección de \(x_3\) en el subespacio generado por \(\{e_1,\,e_2\}\). Por lo tanto, el vector \(z_3=x_3-\left[(x_3,\,e_1)e_1+(x_3,\,e_2)e_2\right]\) es ortogonal al subespacio generado por \(\{e_1,\,e_2\}\) o ortogonal a \(e_1\) y \(e_2\), como se aprecia en la figura. Finalmente, \(e_3=z_3/\lVert z_3\rVert\) tiene la misma dirección de \(z_3\) y por lo tanto es ortogonal a \(e_1\) y \(e_2\) y tiene norma unidad.
+Por lo tanto, el número \((x_3,\,e_i)\) es el largo de la proyección de \(x_3\) sobre \(e_i\), y el vector \((x_3,\,e_i)e_i\) es el vector de largo la proyección de \(x_3\) sobre \(e_i\) con la dirección de \(e_i\). En resumen, los vectores \((x_3,\,e_1)e_1\) y \((x_3,\,e_1)e_1\) son los vectores formados por la proyección de \(x_3\) sobre \(e_1\) y \(e_2\) respectivamente, como se muestra en la figura. De esta forma, \((x_3,\,e_1)e_1+(x_3,\,e_1)e_1\) es la proyección de \(x_3\) en el subespacio generado por \(\{e_1,\,e_2\}\). Por lo tanto, el vector \(z_3=x_3-\left[(x_3,\,e_1)e_1+(x_3,\,e_2)e_2\right]\) es ortogonal al subespacio generado por \(\{e_1,\,e_2\}\) o ortogonal a \(e_1\) y \(e_2\), como se aprecia en la figura. Finalmente, \(e_3=z_3/\lVert z_3\rVert\) tiene la misma dirección de \(z_3\) y por lo tanto es ortogonal a \(e_1\) y \(e_2\) y tiene norma unidad.
 
 Se aplica a continuación el procedimiento de Gram-Schmidt a los vectores 
 \[
@@ -20981,7 +20975,7 @@ Es interesante notar que la matriz de covarianza en estado estacionario es tambi
   &\overset{(a)}{=}\sum_{l=1}^\infty\A^l\B\mathbf{Q}\B^T{\A^l}^T+\A^0\B\mathbf{Q}\B^T{\A^0}^T\\
   &\overset{(b)}{=}\sum_{k=0}^\infty\A^k\B\mathbf{Q}\B^T{\A^k}^T,
 \end{align*}
-donde en \((a)\) se realizó el cambio de variable \(l=k+1\) en la sumatoria y se pre-mutiplicó y post-multiplicó el segundo término por \(\A^0={\A^0}^T=\I\), y en \((b)\) se agregó el segundo término a la sumatoria, a la cual se le renombró el índice \(l\) a \(k\). Se concluye que la covarianza en estado estacionario cumple que
+donde en \((a)\) se realizó el cambio de variable \(l=k+1\) en la sumatoria y se pre-multiplicó y post-multiplicó el segundo término por \(\A^0={\A^0}^T=\I\), y en \((b)\) se agregó el segundo término a la sumatoria, a la cual se le renombró el índice \(l\) a \(k\). Se concluye que la covarianza en estado estacionario cumple que
 \[
  \C = \A\C\A^T+\B\mathbf{Q}\B^T
 \]
@@ -21293,7 +21287,7 @@ El filtro de Kalman se reduce a estas ecuaciones cuando el parámetro a estimar 
  \caption{\label{fig:kalman_filter_whitening_interpretation} Filtro de Kalman excitado por la secuencia de innovación  e interpretación del filtro de Kalman como filtro de blanqueado cuando se consideran a los datos como entrada y a la secuencia de innovación como salida.}
  \end{center}
  \end{figure} 
- De la discusión basada en el enfoque espacio vectorial, se sabe que \(\tilde{x}[n]\) no está correlacionada con \(\{x[0],\,\dots,\,x[n-1]\}\), lo que se traduce en una secuencia de variables aletorias no correlacionadas, como se muestra en la figura \ref{fig:kalman_filter_orthogonality_innovation}. Alternativamente, se se ve a \(\tilde{x}[n]\) como la salida y el filtro alcanza un estado estacionario, se trata de un filtro lineal invariante de blanqueado, como se muestra en la figura \ref{fig:kalman_filter_whitening_interpretation}. Esto se discute con mas detalle en la sección siguiente.
+ De la discusión basada en el enfoque espacio vectorial, se sabe que \(\tilde{x}[n]\) no está correlacionada con \(\{x[0],\,\dots,\,x[n-1]\}\), lo que se traduce en una secuencia de variables aleatorias no correlacionadas, como se muestra en la figura \ref{fig:kalman_filter_orthogonality_innovation}. Alternativamente, se se ve a \(\tilde{x}[n]\) como la salida y el filtro alcanza un estado estacionario, se trata de un filtro lineal invariante de blanqueado, como se muestra en la figura \ref{fig:kalman_filter_whitening_interpretation}. Esto se discute con mas detalle en la sección siguiente.
  \begin{figure}[!htb]
   \begin{minipage}[c]{0.48\textwidth}
     \includegraphics[width=\textwidth]{figuras/kalman_filter_orthogonality_innovation.pdf}
@@ -22235,7 +22229,7 @@ Si \(n_1<n_2<\dots<n_k\), se cumple que
   s[-1] \\ u[0] \\ u[1] \\ \vdots \\ u[n_k]
  \end{bmatrix}.
 \]
-Como las variableas aleatorias \(\{s[-1],\,u[0],\,\dots,\,u[n_k]\}\) son gaussianas e independientes, son conjuntamente gaussianas, por lo que las variables aleatorias \(\{s[n_1,\,s[n_2],\,\dots,\,s[n_k]]\}\) también son conjuntamente gaussianas por tratarse de un transformación lineal de \(\{s[-1],\,u[0],\,\dots,\,u[n_k]\}\). Se concluye que el vector \(\s=[s[n_1]\,s[n_2]]\dots s[n_k]]^T\) tiene PDF gaussiana multivariada.
+Como las variables aleatorias \(\{s[-1],\,u[0],\,\dots,\,u[n_k]\}\) son gaussianas e independientes, son conjuntamente gaussianas, por lo que las variables aleatorias \(\{s[n_1,\,s[n_2],\,\dots,\,s[n_k]]\}\) también son conjuntamente gaussianas por tratarse de un transformación lineal de \(\{s[-1],\,u[0],\,\dots,\,u[n_k]\}\). Se concluye que el vector \(\s=[s[n_1]\,s[n_2]]\dots s[n_k]]^T\) tiene PDF gaussiana multivariada.
 
 \subsection{Problema 2}\label{sec:problem_13_2}
 
@@ -23164,97 +23158,6 @@ con \(M[-1|-1]=1\). En la figura \ref{fig:problem_13_23} se muestra la evolució
   \end{minipage}
 \end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \appendix
 
 \chapter{Identidad matricial de Woodbury}\label{ap:woodbury_identity}
@@ -23380,7 +23283,7 @@ Notar que esta expresión se puede escribir como
  -\frac{1}{2}\frac{\sin(\alpha N/2+\beta)}{N\sin(\alpha/2)}
  \frac{\sin(\alpha N/2)}{N\sin(\alpha/2)}\approx 0,
 \]
-ya que todos los términos son de la forma del término graficado en la figura \ref{fig:problem_3_7}, que toma valores pequeños si \(\alpha\) no es cercano a 0 ni a \(\pi\).
+ya que todos los términos son de la forma del término mostrado en la gráfica de la figura \ref{fig:problem_3_7}, que toma valores pequeños si \(\alpha\) no es cercano a 0 ni a \(\pi\).
 
 Para demostrar las ecuaciones \ref{eq:sum_n_raised_i_cos_alpha_n} para \(i=2\), se procede de forma análoga al caso para \(i=1\), pero la deducción se omite porque requiere una cantidad considerable de cuentas.
 
@@ -24379,9 +24282,6 @@ como se realizó para la elipse rotada centrada en el origen. Los parámetros de
   \end{cases}}
  \end{aligned}
 \end{equation}
-
-
-
 
 
 \bibliographystyle{ieeetr}
