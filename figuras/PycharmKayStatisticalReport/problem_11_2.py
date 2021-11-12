@@ -116,17 +116,17 @@ plt.annotate("", xytext=(xmin_ax, 0), xycoords='data', xy=(xmax_ax, 0), textcoor
 plt.annotate("", xytext=(0, ymin_ax), xycoords='data', xy=(0, ymax_ax), textcoords='data',
              arrowprops=dict(width=0.1, headwidth=6, headlength=8, facecolor='black', shrink=0.002))
 
-plt.plot(theta, pdf1, 'k', lw=2)
+plt.plot(theta, pdf1, 'k', lw=2, zorder=2)
 plt.plot([x, x], [0, xtl], 'k', lw=1)
 plt.plot([-x, -x], [0, xtl], 'k', lw=1)
 
 # media, mediana y modo
 mean_pdf1 = 0
 median_pdf1 = 0
-plt.plot([mean_pdf1, mean_pdf1], [0, fun_pdf1(mean_pdf1)], color=col1)
-plt.plot([median_pdf1, median_pdf1], [0, fun_pdf1(median_pdf1)], color=col2)
-plt.plot([-x, -x], [0, fun_pdf1(-x)], color=col3)
-plt.plot([x, x], [0, fun_pdf1(x)], color=col3)
+plt.plot([mean_pdf1, mean_pdf1], [0, fun_pdf1(mean_pdf1)], color=col1, zorder=1)
+plt.plot([median_pdf1, median_pdf1], [0, fun_pdf1(median_pdf1)], color=col2, zorder=1)
+plt.plot([-x, -x], [0, fun_pdf1(-x)], color=col3, zorder=1)
+plt.plot([x, x], [0, fun_pdf1(x)], color=col3, zorder=1)
 
 
 # xlabels and xtickslabels
@@ -152,16 +152,16 @@ plt.annotate("", xytext=(xmin_ax, 0), xycoords='data', xy=(xmax_ax, 0), textcoor
 plt.annotate("", xytext=(0, ymin_ax), xycoords='data', xy=(0, ymax_ax), textcoords='data',
              arrowprops=dict(width=0.1, headwidth=6, headlength=8, facecolor='black', shrink=0.002))
 
-plt.plot(theta, pdf2, 'k', lw=2)
+plt.plot(theta, pdf2, 'k', lw=2, zorder=2)
 plt.plot([x, x], [0, xtl], 'k', lw=1)
 plt.plot([-x, -x], [0, xtl], 'k', lw=1)
 
 # media, mediana y modo
 mean_pdf2 = x / 2
 mode_pdf2 = x
-plt.plot([mean_pdf2, mean_pdf2], [0, fun_pdf2(mean_pdf2)], color=col1, label='${\\rm media}$')
-plt.plot([median_pdf2, median_pdf2], [0, fun_pdf2(median_pdf2)], color=col2, label='${\\rm mediana}$')
-plt.plot([mode_pdf2, mode_pdf2], [0, fun_pdf2(mode_pdf2)], color=col3, label='${\\rm moda}$')
+plt.plot([mean_pdf2, mean_pdf2], [0, fun_pdf2(mean_pdf2)], color=col1, label='${\\rm media}$', zorder=1)
+plt.plot([median_pdf2, median_pdf2], [0, fun_pdf2(median_pdf2)], color=col2, label='${\\rm mediana}$', zorder=1)
+plt.plot([mode_pdf2, mode_pdf2], [0, fun_pdf2(mode_pdf2)], color=col3, label='${\\rm moda}$', zorder=1)
 
 plt.plot([mean_pdf2, mean_pdf2], [0, xtl], 'k', lw=1)
 plt.text(x/2, 1.35 * xtm, '$\\dfrac{x}{2}$', fontsize=fontsize, ha='center', va='baseline')
