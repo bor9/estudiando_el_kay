@@ -243,7 +243,7 @@ Como la probabilidad de obtener \(x\) en el intervalo  \([97,\,103]\) en los 100
 
 Sea \(\x=\theta+\w\), donde \(\w\) es una variable aleatoria con PDF \(p_w(w)\). Si \(\theta\) es un parámetro determinístico, encontrar la PDF de \(\x\) en términos de \(p_w\), la cual se denotará \(p(x;\,\theta)\). Luego, asumiendo que \(\theta\) es una variable aleatoria independiente de \(\w\), encontrar la PDF condicional \(p(x\,|\,\theta)\). Finalmente, determinar \(p(x|\theta)\) sin asumir que \(\theta\) y \(\w\) son independientes. ¿Qué se puede decir respecto a \(p(x;\,\theta)\) y \(p(x\,|\,\theta)\)?\footnote{En este problema, las letras en negrita representan variables aleatorias escalares, a diferencia del resto del documento, en donde las letras en negrita representan variables alatorias vectoriales.}
 
-\paragraph{Solución} En el caso en que \(\theta\) es un parámetro determinístico, la PDF de \(\x\) es la PDF \(\w\) desplazada una cantidad \(\theta\) hacia la derecha, es decir,
+\paragraph{Solución} En el caso en que \(\theta\) es un parámetro determinístico, la PDF de \(\x\) es la PDF de \(\w\) desplazada una cantidad \(\theta\) hacia la derecha, es decir,
 \[
  p(x;\,\theta)=p_w(x-\theta).
 \]
@@ -350,7 +350,7 @@ Para los mismos datos del problema anterior se propone el siguiente estimador:
   \dfrac{1}{N}\sum\limits_{n=0}^{N-1}x[n], &  \textrm{si }\dfrac{A}{\sigma^2}=A^2\leq1000.
  \end{array}\right.
 \]
-La fundamentación de este estimador, es que para relaciones señal a ruido (\emph{signal-to-noise ratio}, SNR) suficientemente altas, no se necesita reducir el efecto del ruido mediante el promediado y de esta forma, se reduce el costo computacional. Comentar sobre este enfoque.
+La fundamentación de este estimador es que para relaciones señal a ruido (\emph{signal-to-noise ratio}, SNR) suficientemente altas, no se necesita reducir el efecto del ruido mediante el promediado y de esta forma, se reduce el costo computacional. Comentar sobre este enfoque.
 
 \paragraph{Solución} \(\hat{A}\) no es un estimador, ya que para implementarlo se requiere el conocimiento de \(A\) para calcular la SNR \(A/\sigma^2\).
 
