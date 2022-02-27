@@ -19391,8 +19391,7 @@ y de la ecuación \ref{eq:linear_bayesian_bayesian_wiener_prediction_mse}, el MS
 \begin{align*}
  M_{\hat{x}}&=r_{xx}[0]-h[1]r_{xx}[l]\\
   &=\frac{\sigma_u^2}{1-a^2[1]}-(-a[1])^l\frac{\sigma_u^2}{1-a^2[1]}(-a[1])^l\\
-  &=\frac{\sigma_u^2}{1-a^2[1]}(1-a[1]^{2l})\\
-  &=\sigma_u^2.
+  &=\frac{\sigma_u^2}{1-a^2[1]}(1-a[1]^{2l}).
 \end{align*}
 Es interesante notar que como \(|a[1]|<1\), el predictor decae a 0 con \(l\). Esto es razonable, ya que la correlación entre la muestra \(x[(N-1)+l]\) a predecir y la muestra \(x[N-1]\) empleada para la predicción es \(r_{xx}[l]\). Cuando \(l\) crece, \(r_{xx}[l]\) decrece a 0, y también lo hace \(\hat{x}[(N-1)+l]\). Esto también se refleja en el MSE mínimo, que toma el valor mas pequeño cuando \(l=1\) y crece con \(l\). Ver además los problemas de las secciones \ref{sec:problem_12_19} y \ref{sec:problem_12_20}.
 
